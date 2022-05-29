@@ -19,34 +19,42 @@ public class Add extends javax.swing.JFrame {
     private void initComponents() {
 
         labelTittle = new javax.swing.JLabel();
-        txtTittle = new javax.swing.JTextField();
-        labelDesc = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtareaDesc = new javax.swing.JTextArea();
-        btnAdd = new javax.swing.JButton();
+        textFieldTitle = new javax.swing.JTextField();
+        labelDescription = new javax.swing.JLabel();
+        scrollPaneDescription = new javax.swing.JScrollPane();
+        textAreaDescription = new javax.swing.JTextArea();
+        buttonAdd = new javax.swing.JButton();
+        buttonBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         labelTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTittle.setText("TITLE");
 
-        txtTittle.addActionListener(new java.awt.event.ActionListener() {
+        textFieldTitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTittleActionPerformed(evt);
+                textFieldTitleActionPerformed(evt);
             }
         });
 
-        labelDesc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelDesc.setText("DESCRIPTION");
+        labelDescription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDescription.setText("DESCRIPTION");
 
-        txtareaDesc.setColumns(20);
-        txtareaDesc.setRows(5);
-        jScrollPane1.setViewportView(txtareaDesc);
+        textAreaDescription.setColumns(20);
+        textAreaDescription.setRows(5);
+        scrollPaneDescription.setViewportView(textAreaDescription);
 
-        btnAdd.setText("ADD");
-        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+        buttonAdd.setText("ADD");
+        buttonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddActionPerformed(evt);
+                buttonAddActionPerformed(evt);
+            }
+        });
+
+        buttonBack.setText("BACK");
+        buttonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBackActionPerformed(evt);
             }
         });
 
@@ -55,17 +63,16 @@ public class Add extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(labelTittle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtTittle)
-                            .addComponent(labelDesc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(buttonAdd)
+                        .addGap(110, 110, 110)
+                        .addComponent(buttonBack))
+                    .addComponent(labelTittle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textFieldTitle)
+                    .addComponent(labelDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollPaneDescription))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
@@ -73,27 +80,33 @@ public class Add extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(labelTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(txtTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(labelDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textFieldTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrollPaneDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(btnAdd)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonAdd)
+                    .addComponent(buttonBack))
                 .addGap(21, 21, 21))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtTittleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTittleActionPerformed
+    private void textFieldTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldTitleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTittleActionPerformed
+    }//GEN-LAST:event_textFieldTitleActionPerformed
 
-    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+    private void buttonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddActionPerformed
+    }//GEN-LAST:event_buttonAddActionPerformed
+
+    private void buttonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,11 +144,68 @@ public class Add extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelDesc;
+    private javax.swing.JButton buttonAdd;
+    private javax.swing.JButton buttonBack;
+    private javax.swing.JLabel labelDescription;
     private javax.swing.JLabel labelTittle;
-    private javax.swing.JTextField txtTittle;
-    private javax.swing.JTextArea txtareaDesc;
+    private javax.swing.JScrollPane scrollPaneDescription;
+    private javax.swing.JTextArea textAreaDescription;
+    private javax.swing.JTextField textFieldTitle;
     // End of variables declaration//GEN-END:variables
+    
+    public javax.swing.JButton getButtonAdd() {
+        return buttonAdd;
+    }
+
+    public void setButtonAdd(javax.swing.JButton buttonAdd) {
+        this.buttonAdd = buttonAdd;
+    }
+
+    public javax.swing.JButton getButtonBack() {
+        return buttonBack;
+    }
+
+    public void setButtonBack(javax.swing.JButton buttonBack) {
+        this.buttonBack = buttonBack;
+    }
+
+    public javax.swing.JLabel getLabelDescription() {
+        return labelDescription;
+    }
+
+    public void setLabelDescription(javax.swing.JLabel labelDescription) {
+        this.labelDescription = labelDescription;
+    }
+
+    public javax.swing.JLabel getLabelTittle() {
+        return labelTittle;
+    }
+
+    public void setLabelTittle(javax.swing.JLabel labelTittle) {
+        this.labelTittle = labelTittle;
+    }
+
+    public javax.swing.JScrollPane getScrollPaneDescription() {
+        return scrollPaneDescription;
+    }
+
+    public void setScrollPaneDescription(javax.swing.JScrollPane scrollPaneDescription) {
+        this.scrollPaneDescription = scrollPaneDescription;
+    }
+
+    public javax.swing.JTextArea getTextAreaDescription() {
+        return textAreaDescription;
+    }
+
+    public void setTextAreaDescription(javax.swing.JTextArea textAreaDescription) {
+        this.textAreaDescription = textAreaDescription;
+    }
+
+    public javax.swing.JTextField getTextFieldTitle() {
+        return textFieldTitle;
+    }
+
+    public void setTextFieldTitle(javax.swing.JTextField textFieldTitle) {
+        this.textFieldTitle = textFieldTitle;
+    }
 }

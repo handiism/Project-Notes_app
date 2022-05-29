@@ -18,54 +18,70 @@ public class Search extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelTittle = new javax.swing.JLabel();
-        txtTittle = new javax.swing.JTextField();
-        labelDesc = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        textareaDesc = new javax.swing.JTextArea();
-        btnEdit = new javax.swing.JButton();
-        txtId = new javax.swing.JTextField();
+        labelTitle = new javax.swing.JLabel();
+        textFieldTitle = new javax.swing.JTextField();
+        labelDescription = new javax.swing.JLabel();
+        scrollPaneTextArea = new javax.swing.JScrollPane();
+        textAreaDescription = new javax.swing.JTextArea();
+        buttonEdit = new javax.swing.JButton();
+        textFieldId = new javax.swing.JTextField();
         labelId = new javax.swing.JLabel();
-        btnEdit1 = new javax.swing.JButton();
+        buttonBack = new javax.swing.JButton();
+        buttonDelete = new javax.swing.JButton();
+        buttonSearch = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        labelTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTittle.setText("TITLE");
+        labelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTitle.setText("TITLE");
 
-        txtTittle.addActionListener(new java.awt.event.ActionListener() {
+        textFieldTitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTittleActionPerformed(evt);
+                textFieldTitleActionPerformed(evt);
             }
         });
 
-        labelDesc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelDesc.setText("DESCRIPTION");
+        labelDescription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDescription.setText("DESCRIPTION");
 
-        textareaDesc.setColumns(20);
-        textareaDesc.setRows(5);
-        jScrollPane1.setViewportView(textareaDesc);
+        textAreaDescription.setColumns(20);
+        textAreaDescription.setRows(5);
+        scrollPaneTextArea.setViewportView(textAreaDescription);
 
-        btnEdit.setText("EDIT");
-        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+        buttonEdit.setText("EDIT");
+        buttonEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditActionPerformed(evt);
+                buttonEditActionPerformed(evt);
             }
         });
 
-        txtId.addActionListener(new java.awt.event.ActionListener() {
+        textFieldId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdActionPerformed(evt);
+                textFieldIdActionPerformed(evt);
             }
         });
 
         labelId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelId.setText("ID");
 
-        btnEdit1.setText("DELETE");
-        btnEdit1.addActionListener(new java.awt.event.ActionListener() {
+        buttonBack.setText("BACK");
+        buttonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEdit1ActionPerformed(evt);
+                buttonBackActionPerformed(evt);
+            }
+        });
+
+        buttonDelete.setText("DELETE");
+        buttonDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonDeleteActionPerformed(evt);
+            }
+        });
+
+        buttonSearch.setText("SEARCH");
+        buttonSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSearchActionPerformed(evt);
             }
         });
 
@@ -74,20 +90,25 @@ public class Search extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(labelTittle, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                        .addComponent(txtTittle)
-                        .addComponent(txtId)
-                        .addComponent(labelId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEdit1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(labelDesc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(labelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(buttonEdit)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonDelete)
+                                .addGap(17, 17, 17)
+                                .addComponent(buttonBack))
+                            .addComponent(labelDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(scrollPaneTextArea)
+                            .addComponent(textFieldTitle)
+                            .addComponent(textFieldId)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(buttonSearch)))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
@@ -96,40 +117,51 @@ public class Search extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(labelId, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonSearch)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFieldTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addComponent(labelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(scrollPaneTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEdit)
-                    .addComponent(btnEdit1))
+                    .addComponent(buttonEdit)
+                    .addComponent(buttonBack)
+                    .addComponent(buttonDelete))
                 .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtTittleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTittleActionPerformed
+    private void textFieldTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldTitleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTittleActionPerformed
+    }//GEN-LAST:event_textFieldTitleActionPerformed
 
-    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+    private void buttonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditActionPerformed
+    }//GEN-LAST:event_buttonEditActionPerformed
 
-    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+    private void textFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdActionPerformed
+    }//GEN-LAST:event_textFieldIdActionPerformed
 
-    private void btnEdit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdit1ActionPerformed
+    private void buttonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEdit1ActionPerformed
+    }//GEN-LAST:event_buttonBackActionPerformed
+
+    private void buttonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonDeleteActionPerformed
+
+    private void buttonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonSearchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,14 +200,104 @@ public class Search extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEdit;
-    private javax.swing.JButton btnEdit1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelDesc;
+    private javax.swing.JButton buttonBack;
+    private javax.swing.JButton buttonDelete;
+    private javax.swing.JButton buttonEdit;
+    private javax.swing.JButton buttonSearch;
+    private javax.swing.JLabel labelDescription;
     private javax.swing.JLabel labelId;
-    private javax.swing.JLabel labelTittle;
-    private javax.swing.JTextArea textareaDesc;
-    private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtTittle;
+    private javax.swing.JLabel labelTitle;
+    private javax.swing.JScrollPane scrollPaneTextArea;
+    private javax.swing.JTextArea textAreaDescription;
+    private javax.swing.JTextField textFieldId;
+    private javax.swing.JTextField textFieldTitle;
     // End of variables declaration//GEN-END:variables
+    
+    public javax.swing.JButton getButtonBack() {
+        return buttonBack;
+    }
+
+    public void setButtonBack(javax.swing.JButton buttonBack) {
+        this.buttonBack = buttonBack;
+    }
+
+    public javax.swing.JButton getButtonDelete() {
+        return buttonDelete;
+    }
+
+    public void setButtonDelete(javax.swing.JButton buttonDelete) {
+        this.buttonDelete = buttonDelete;
+    }
+
+    public javax.swing.JButton getButtonEdit() {
+        return buttonEdit;
+    }
+    
+    public javax.swing.JButton getButtonSearch() {
+        return buttonSearch;
+    }
+
+    public void setButtonEdit(javax.swing.JButton buttonEdit) {
+        this.buttonEdit = buttonEdit;
+    }
+    
+    public void setButtonSearch(javax.swing.JButton buttonSearch) {
+        this.buttonSearch = buttonSearch;
+    }
+
+    public javax.swing.JLabel getLabelDescription() {
+        return labelDescription;
+    }
+
+    public void setLabelDescription(javax.swing.JLabel labelDescription) {
+        this.labelDescription = labelDescription;
+    }
+
+    public javax.swing.JLabel getLabelId() {
+        return labelId;
+    }
+
+    public void setLabelId(javax.swing.JLabel labelId) {
+        this.labelId = labelId;
+    }
+
+    public javax.swing.JLabel getLabelTitle() {
+        return labelTitle;
+    }
+
+    public void setLabelTitle(javax.swing.JLabel labelTitle) {
+        this.labelTitle = labelTitle;
+    }
+
+    public javax.swing.JScrollPane getScrollPaneTextArea() {
+        return scrollPaneTextArea;
+    }
+
+    public void setScrollPaneTextArea(javax.swing.JScrollPane scrollPaneTextArea) {
+        this.scrollPaneTextArea = scrollPaneTextArea;
+    }
+
+    public javax.swing.JTextArea getTextAreaDescription() {
+        return textAreaDescription;
+    }
+
+    public void setTextAreaDescription(javax.swing.JTextArea textAreaDescription) {
+        this.textAreaDescription = textAreaDescription;
+    }
+
+    public javax.swing.JTextField getTextFieldId() {
+        return textFieldId;
+    }
+
+    public void setTextFieldId(javax.swing.JTextField textFieldId) {
+        this.textFieldId = textFieldId;
+    }
+
+    public javax.swing.JTextField getTextFieldTitle() {
+        return textFieldTitle;
+    }
+
+    public void setTextFieldTitle(javax.swing.JTextField textFieldTitle) {
+        this.textFieldTitle = textFieldTitle;
+    }
 }
