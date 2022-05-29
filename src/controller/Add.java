@@ -6,6 +6,8 @@
  */
 package controller;
 
+import javax.swing.JOptionPane;
+import model.entity.Note;
 import model.repository.NoteRepository;
 
 public class Add {
@@ -25,19 +27,32 @@ public class Add {
   public Add(view.Add view, NoteRepository repository) {
     this.viewAdd = view;
     this.repository = repository;
-    
+
     initController();
-    
+
+    this.viewAdd.setTitle("ADD NOTES");
     this.viewAdd.setLocationRelativeTo(null);
     this.viewAdd.setResizable(false);
     this.viewAdd.pack();
   }
-  
+
   private void initController() {
-      viewAdd.getButtonBack().addActionListener((l) -> {
-          controller.Home controllerHome = new controller.Home(new view.Home(), repository);
-          viewAdd.setVisible(false);
-          controllerHome.getView().setVisible(true);
-      });
+    viewAdd.getButtonAdd().addActionListener((l) -> {
+      String title = viewAdd.getTextFieldTitle().getText();
+      String description = viewAdd.getTextAreaDescription().getText();
+      Note note = repository.create(title, description);
+      if (note == null) {
+        JOptionPane.showMessageDialog(null, "Failed to create a new note");
+      } else {
+        JOptionPane.showMessageDialog(null, "Note created succesfully");
+      }
+    });
+
+    viewAdd.getButtonBack().addActionListener((l) -> {
+      controller.Home controllerHome =
+          new controller.Home(new view.Home(), repository);
+      viewAdd.setVisible(false);
+      controllerHome.getView().setVisible(true);
+    });
   }
 }

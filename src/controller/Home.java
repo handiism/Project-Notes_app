@@ -6,13 +6,15 @@
  */
 package controller;
 
+import helper.NonEditableTableModel;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import model.entity.Note;
 import model.repository.NoteRepository;
 
 public class Home {
   private view.Home viewHome;
   private NoteRepository repository;
-
 
   public view.Home getView() { return viewHome; }
 
@@ -27,25 +29,39 @@ public class Home {
   public Home(view.Home view, NoteRepository repository) {
     this.viewHome = view;
     this.repository = repository;
-    
+
     initController();
+    
+    this.viewHome.setTitle("HOME");
     this.viewHome.setLocationRelativeTo(null);
     this.viewHome.setResizable(false);
     this.viewHome.pack();
   }
-  
-  void initController() {
-      viewHome.getTableNote().setModel(new DefaultTableModel(new Object[][]{{1,"adijidom"},{2,"dsiwe"}}, new String[]{"id","table"}));
-      viewHome.getButtonAdd().addActionListener((l) -> {
-          controller.Add controllerAdd = new controller.Add(new view.Add(),repository);
-          viewHome.setVisible(false);
-          controllerAdd.getView().setVisible(true);
-      });
-      
-      viewHome.getButtonSearch().addActionListener((l) -> {
-          controller.Search controllerSearch = new controller.Search(new view.Search(), repository);
-          viewHome.setVisible(false);
-          controllerSearch.getView().setVisible(true);
-      });
+
+  private void initController() {
+    DefaultTableModel defaultTableModel = new NonEditableTableModel();
+    String tableNames[] = {"ID", "TITLE"};
+    for (int i = 0; i < tableNames.length; i++) {
+      defaultTableModel.addColumn(tableNames[i]);
+    }
+    List<Note> notes = repository.readAll();
+    for (Note note : notes) {
+      defaultTableModel.addRow(new Object[] {note.getId(), note.getTitle()});
+    }
+    viewHome.getTableNote().setModel(defaultTableModel);
+    viewHome.getTableNote().setRowSelectionAllowed(false);
+    viewHome.getButtonAdd().addActionListener((l) -> {
+      controller.Add controllerAdd =
+          new controller.Add(new view.Add(), repository);
+      viewHome.setVisible(false);
+      controllerAdd.getView().setVisible(true);
+    });
+
+    viewHome.getButtonSearch().addActionListener((l) -> {
+      controller.Search controllerSearch =
+          new controller.Search(new view.Search(), repository);
+      viewHome.setVisible(false);
+      controllerSearch.getView().setVisible(true);
+    });
   }
 }
